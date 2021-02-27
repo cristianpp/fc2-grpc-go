@@ -35,11 +35,6 @@ func (*UserService) AddUser(ctx context.Context, req *pb.User) (*pb.User, error)
 	}, nil
 }
 
-//type UserServiceClient interface {
-//	AddUser(ctx context.Context, in *User, opts ...grpc.CallOption) (*User, error)
-//	AddUserVerbose(ctx context.Context, in *User, opts ...grpc.CallOption) (UserService_AddUserVerboseClient, error)
-//AddUsers(ctx context.Context, opts ...grpc.CallOption) (UserService_AddUsersClient, error)
-//	AddUserStreamBoth(ctx context.Context, opts ...grpc.CallOption) (UserService_AddUserStreamBothClient, error)
 func (*UserService) AddUserVerbose(req *pb.User, stream pb.UserService_AddUserVerboseServer) error {
 
 	stream.Send(&pb.UserResultStream{
